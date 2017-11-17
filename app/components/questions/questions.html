@@ -1,0 +1,13 @@
+<div ng-repeat="q in qs track by $index" class="question-wrapper" >
+    <h3>{{q.question}}</h3>
+    <div class="ng-binding" ng-class="{green:q.labelDifficulty === 'Easy', yellow:q.labelDifficulty === 'Medium', red:q.labelDifficulty === 'Hard'}" >
+        {{q.labelDifficulty}}
+    </div>
+    <div class="gear" ><img src="./styles/assets/gear.svg" /></div>
+    <ul>
+        <li>{{q.options[1]}}</li>
+        <li>{{q.options[2]}}</li>
+        <li>{{q.options[3]}}</li>
+        <li>{{q.options[4]}}</li>
+    </ul>
+</div>

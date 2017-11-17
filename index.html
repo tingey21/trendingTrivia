@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="trivia">
 
 <head>
   <meta charset="utf-8">
@@ -9,7 +9,7 @@
   <link rel="shortcut icon" href="/styles/assets/crownFavicon.png">
 </head>
 
-<body>
+<body ng-controller="mainCtrl" >
   <header>
     <div></div>
     <h1>Trivia Trends</h1>
@@ -28,36 +28,37 @@
     </div>
 
     <!-- Questions go here -->
+    <questions></questions>
 
   </article>
 
   <div class="modal">
     <form>
       <h4 class="close">X</h4>
-      <span>Question</span><input type="text" ng-model="<!-- Question -->">
-      <span>Animal it's about</span><input type="text" ng-model="<!-- Animal -->">
+      <span>Question</span><input type="text" ng-model="a">
+      <span>Animal it's about</span><input type="text" ng-model="a">
       <span>Difficulty</span>
       <div class="range">
-        <input type="range" min="1" max="3" ng-model="<!-- Difficulty -->">
+        <input type="range" min="1" max="3" ng-model="a">
 
         <h5>{{newQuestion.difficulty}}</h5>
       </div>
       <h4>Options</h4>
       <div>
-        <input type="radio" ng-model="" value="1">
-        <input type="text" ng-model="">
+        <input type="radio" ng-model="a" value="1">
+        <input type="text" ng-model="a">
       </div>
       <div>
-        <input type="radio" ng-model="" value="2">
-        <input type="text" ng-model="">
+        <input type="radio" ng-model="a" value="2">
+        <input type="text" ng-model="a">
       </div>
       <div>
-        <input type="radio" ng-model="" value="3">
-        <input type="text" ng-model="">
+        <input type="radio" ng-model="a" value="3">
+        <input type="text" ng-model="a">
       </div>
       <div>
-        <input type="radio" ng-model="" value="4">
-        <input type="text" ng-model="">
+        <input type="radio" ng-model="a" value="4">
+        <input type="text" ng-model="a">
       </div>
 
       <!--Add question buttons-->
@@ -81,7 +82,11 @@
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js" charset="utf-8"></script>
-  <script src="./app.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
+  <script src="./app/app.js" charset="utf-8"></script>
+  <script src="./app/srvcs/triviaSrvc.js"></script>
+  <script src="./app/ctrl/mainCtrl.js"></script>
+  <script src="./app/components/questions/questions.js"></script>
 </body>
 
 </html>
